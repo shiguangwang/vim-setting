@@ -12,15 +12,14 @@ VIM_DIR=$HOME/.vim
 
 # prepare vimrc
 if [ -f $VIM_RC ]; then
-  mv $VIM_RC $VIM_RC.$(date -u)
+  mv $VIM_RC $VIM_RC.backup
 fi
 ln -s $PWD/vimrc $VIM_RC
 
 # prepare vim directory
-if [ -d $VIM_DIR ]; then
-  mv $VIM_DIR $VIM_DIR.$(date -u)
+if [ ! -d $VIM_DIR ]; then
+  mkdir -p $VIM_DIR/bundle
 fi
-mkdir -p $VIM_DIR/bundle
 
 # Get the Vundle plugin manager
 echo "Preparing vundle ..."
