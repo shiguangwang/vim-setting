@@ -8,6 +8,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 " ++++++++++ Your plugins go here ++++++++++
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'klen/python-mode'
 Plugin 'ludovicchabant/vim-lawrencium'
 Plugin 'mbbill/undotree'
 Plugin 'mhinz/vim-signify'
@@ -154,6 +155,9 @@ au BufNewFile,BufRead *.py
     \ set fileformat=unix
     \ match BadWhitespace /\s\+$/
     \ let python_highlight_all=1
+
+let g:pymode_rope_goto_definition_bind="<C-]>"
+let g:pymode_doc_bind="<C-S-d>"
 
 "
 " other keymap
