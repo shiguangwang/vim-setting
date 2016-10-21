@@ -8,6 +8,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 " ++++++++++ Your plugins go here ++++++++++
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'jnurmine/Zenburn'
 Plugin 'ludovicchabant/vim-lawrencium'
 Plugin 'mbbill/undotree'
 Plugin 'nvie/vim-flake8'
@@ -18,6 +19,7 @@ Plugin 'tmhedberg/SimpylFold'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vim-latex/vim-latex'
@@ -58,13 +60,11 @@ set whichwrap+=<,>,h,l,[,]
 
 hi CursorLine gui=none cterm=none
 
-
 "
 " code folding
 "
 set foldlevel=99
 set foldmethod=indent
-
 
 "
 " mouse
@@ -76,10 +76,12 @@ set ttymouse=xterm
 "
 " color theme
 "
-set background=dark
-colorscheme solarized
-let g:solarized_termcolors=256
-
+if has('gui_running')
+  set background=dark
+  colorscheme solarized
+else
+  colorscheme zenburn
+endif
 
 "
 " YouCompleteMe
@@ -88,7 +90,6 @@ let g:ycm_python_binary_path='python'
 let g:ycm_complete_in_comments=0
 let g:ycm_autoclose_preview_window_after_completion=1
 map <Leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
-
 
 "
 " syntastic -- syntax checker engine
@@ -102,12 +103,10 @@ let g:syntastic_auto_loc_list=1
 let g:syntastic_check_on_open=1
 let g:syntastic_check_on_wq=0
 
-
 "
 " NERDTree
 "
 let NERDTreeIgnore=['.pyc$', '\~$']
-
 
 "
 " command-t
@@ -116,6 +115,10 @@ let g:CommandTFileScanner = 'watchman'
 let g:CommandTMaxCachedDirectories = 10
 let g:CommandTSmartCase = 1
 
+"
+" vim-airline
+"
+let g:airline_powerline_fonts=1
 
 "
 " latex
@@ -134,7 +137,6 @@ au BufNewFile,BufRead *.py
     \ set fileformat=unix
     \ match BadWhitespace /\s\+$/
     \ let python_highlight_all=1
-
 
 "
 " other keymap

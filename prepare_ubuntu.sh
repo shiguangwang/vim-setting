@@ -14,3 +14,5 @@ if [ ! -d $WATCHMAN ]; then
   make
   sudo make install
 fi
+
+./prepare_common.sh
