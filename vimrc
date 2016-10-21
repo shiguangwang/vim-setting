@@ -8,7 +8,6 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 " ++++++++++ Your plugins go here ++++++++++
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'jnurmine/Zenburn'
 Plugin 'ludovicchabant/vim-lawrencium'
 Plugin 'mbbill/undotree'
 Plugin 'mhinz/vim-signify'
@@ -77,12 +76,8 @@ set ttymouse=xterm
 "
 " color theme
 "
-if has('gui_running')
-  set background=dark
-  colorscheme solarized
-else
-  colorscheme zenburn
-endif
+set background=dark
+colorscheme solarized
 
 "
 " YouCompleteMe
@@ -120,6 +115,8 @@ let g:CommandTSmartCase = 1
 " vim-airline
 "
 let g:airline_powerline_fonts=1
+let g:Powerline_symbols='unicode'
+set guifont=Sauce\ Code\ Powerline
 
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
@@ -139,7 +136,6 @@ let g:airline_symbols.paste = '∥'
 let g:airline_symbols.spell = 'Ꞩ'
 let g:airline_symbols.notexists = '∄'
 let g:airline_symbols.whitespace = 'Ξ'
-
 
 "
 " latex
