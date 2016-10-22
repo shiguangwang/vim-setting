@@ -184,6 +184,17 @@ let g:pymode_rope_goto_definition_bind="<C-]>"
 let g:pymode_doc_bind="<C-S-d>"
 
 "
+" Make <C-K> work exactly the same in INSERT mode as emacs
+"
+function EmacsCK()
+  if col(".") == 1
+    execute "normal! D"
+  else
+    execute "normal! lD"
+  endif
+endfunction
+inoremap <C-K> <ESC>:call EmacsCK()<CR>a
+
 " other keymap
 "
 " normal mode
@@ -198,4 +209,4 @@ nnoremap <Leader>o    :on<CR>
 " insert mode
 inoremap <C-A> <HOME>
 inoremap <C-E> <END>
-inoremap <C-K> <ESC>lDa
+inoremap <C-F> <ESC>a
