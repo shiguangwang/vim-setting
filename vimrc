@@ -209,4 +209,3 @@ nnoremap <Leader>o    :on<CR>
 " insert mode
 inoremap <C-A> <HOME>
 inoremap <C-E> <END>
-inoremap <C-F> <ESC>a
