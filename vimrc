@@ -12,7 +12,9 @@ Plugin 'klen/python-mode'
 Plugin 'ludovicchabant/vim-lawrencium'
 Plugin 'mbbill/undotree'
 Plugin 'mhinz/vim-signify'
+Plugin 'mileszs/ack.vim'
 Plugin 'nvie/vim-flake8'
+Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
@@ -79,6 +81,7 @@ set ttymouse=xterm
 "
 set background=dark
 colorscheme solarized
+let g:solarized_termcolors=256
 
 "
 " YouCompleteMe
@@ -104,12 +107,33 @@ let g:syntastic_check_on_wq=0
 " NERDTree
 "
 let NERDTreeIgnore=['.pyc$', '\~$']
+nnoremap <F3> :NERDTreeToggle<CR>
+inoremap <F3> <ESC>:NERDTreeToggle<CR>
+
+"
+" Undotree
+"
+nnoremap <F4> :undotreeToggle<CR>
+inoremap <F4> <ESC>:undotreeToggle<CR>
+
+"
+" NERDCommenter
+"
+let g:NERDSpaceDelims=1
+let g:NERDCompactSexyComs=1
+let g:NERDCommentEmptyLines=0
+let g:NERDTrimTrailingWhitespace=1
 
 "
 " command-t
 "
+let g:CommandTMaxFiles=500000
+let g:CommandTMaxDepth=20
+let g:CommandTMaxHeight=0
 let g:CommandTFileScanner = 'watchman'
+let g:CommandTMatchWindowReverse=0
 let g:CommandTMaxCachedDirectories = 10
+let g:CommandTInputDebounce=50
 let g:CommandTSmartCase = 1
 
 "
@@ -162,13 +186,16 @@ let g:pymode_doc_bind="<C-S-d>"
 "
 " other keymap
 "
-noremap <C-A> <HOME>
-noremap <C-E> <END>
 " normal mode
-nnoremap <C-L> :set invnumber<CR>
-nnoremap U <C-R>
-nnoremap K i<CR><ESC>
-nnoremap <Leader>a :Ack!<Space>
-nnoremap <Leader>it :IndentLinesToggle<CR>
+nnoremap <C-A>        <HOME>
+nnoremap <C-E>        <END>
+nnoremap <C-L>        :set invnumber<CR>
+nnoremap U   <C-R>
+nnoremap K   i<CR><ESC>
+nnoremap <Leader>a    :Ack!<Space>
+nnoremap <Leader>it   :IndentLinesToggle<CR>
+nnoremap <Leader>o    :on<CR>
 " insert mode
+inoremap <C-A> <HOME>
+inoremap <C-E> <END>
 inoremap <C-K> <ESC>lDa
