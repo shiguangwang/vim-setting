@@ -40,6 +40,7 @@ filetype plugin on
 syntax enable
 
 let mapleader=','
+let g:vim_json_syntax_conceal = 0  " Disable conceal in JSON
 
 set autoindent
 set cursorline
