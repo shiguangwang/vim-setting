@@ -171,15 +171,6 @@ let g:tex_flavor='latex'
 "
 " python
 "
-au BufNewFile,BufRead *.py
-    \ set tabstop=4
-    \ set softtabstop=4
-    \ set shiftwidth=4
-    \ set textwidth=79
-    \ set fileformat=unix
-    \ match BadWhitespace /\s\+$/
-    \ let python_highlight_all=1
-
 let g:pymode_rope_goto_definition_bind="<C-]>"
 let g:pymode_doc_bind="<C-S-d>"
 
