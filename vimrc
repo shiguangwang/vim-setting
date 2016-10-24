@@ -8,8 +8,11 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 " ++++++++++ Your plugins go here ++++++++++
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'elzr/vim-json'
+Plugin 'edsono/vim-matchit'
 Plugin 'klen/python-mode'
 Plugin 'ludovicchabant/vim-lawrencium'
+Plugin 'luochen1990/rainbow'
 Plugin 'mbbill/undotree'
 Plugin 'mhinz/vim-signify'
 Plugin 'mileszs/ack.vim'
@@ -26,6 +29,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vim-latex/vim-latex'
+Plugin 'vim-scripts/closetag.vim'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'wincent/command-t'
 Plugin 'Yggdroot/indentLine'
@@ -40,9 +44,9 @@ filetype plugin on
 syntax enable
 
 let mapleader=','
-let g:vim_json_syntax_conceal = 0  " Disable conceal in JSON
 
 set autoindent
+set completeopt-=preview
 set cursorline
 set encoding=utf-8
 set expandtab
@@ -83,6 +87,18 @@ set ttymouse=xterm
 set background=dark
 colorscheme solarized
 let g:solarized_termcolors=256
+
+"
+" rainbow
+"
+let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
+
+
+"
+" indentLine
+"
+let g:indentLine_concealcursor='nc'
+let g:indentLine_conceallevel=2
 
 "
 " YouCompleteMe
@@ -178,14 +194,14 @@ let g:pymode_doc_bind="<C-S-d>"
 "
 " Make <C-K> work exactly the same in INSERT mode as emacs
 "
-function EmacsCK()
+function EmacsCKKey()
   if col(".") == 1
     execute "normal! D"
   else
     execute "normal! lD"
   endif
 endfunction
-inoremap <C-K> <ESC>:call EmacsCK()<CR>a
+inoremap <C-K> <ESC>:call EmacsCKKey()<CR>a
 
 " other keymap
 "
@@ -201,3 +217,4 @@ nnoremap <Leader>o    :on<CR>
 " insert mode
 inoremap <C-A> <HOME>
 inoremap <C-E> <END>
+inoremap ,, <ESC>
