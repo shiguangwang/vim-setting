@@ -16,6 +16,7 @@ Plugin 'luochen1990/rainbow'
 Plugin 'mbbill/undotree'
 Plugin 'mhinz/vim-signify'
 Plugin 'mileszs/ack.vim'
+Plugin 'mtth/scratch.vim'
 Plugin 'nvie/vim-flake8'
 Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/nerdcommenter'
@@ -217,4 +218,4 @@ nnoremap <Leader>o    :on<CR>
 " insert mode
 inoremap <C-A> <HOME>
 inoremap <C-E> <END>
-inoremap ,, <ESC>
+inoremap jj <ESC>
