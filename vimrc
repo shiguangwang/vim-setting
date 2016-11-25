@@ -47,6 +47,7 @@ syntax enable
 let mapleader = ','
 
 set autoindent
+set backspace=indent,eol,start
 set completeopt-=preview
 set cursorline
 set encoding=utf-8
