@@ -44,7 +44,7 @@ filetype plugin indent on
 filetype plugin on
 syntax enable
 
-let mapleader=','
+let mapleader = ','
 
 set autoindent
 set completeopt-=preview
@@ -87,7 +87,7 @@ set ttymouse=xterm
 "
 set background=dark
 colorscheme solarized
-let g:solarized_termcolors=256
+let g:solarized_termcolors = 256
 
 "
 " rainbow
@@ -98,15 +98,15 @@ let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
 "
 " indentLine
 "
-let g:indentLine_concealcursor='nc'
-let g:indentLine_conceallevel=2
+let g:indentLine_concealcursor = 'nc'
+let g:indentLine_conceallevel = 2
 
 "
 " YouCompleteMe
 "
-let g:ycm_python_binary_path='python'
-let g:ycm_complete_in_comments=0
-let g:ycm_autoclose_preview_window_after_completion=1
+let g:ycm_python_binary_path = 'python'
+let g:ycm_complete_in_comments = 0
+let g:ycm_autoclose_preview_window_after_completion = 1
 map <Leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 "
@@ -116,15 +116,15 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-let g:syntastic_always_populate_loc_list=1
-let g:syntastic_auto_loc_list=1
-let g:syntastic_check_on_open=1
-let g:syntastic_check_on_wq=0
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 "
 " NERDTree
 "
-let NERDTreeIgnore=['.pyc$', '\~$']
+let NERDTreeIgnore = ['.pyc$', '\~$']
 nnoremap <F3> :NERDTreeToggle<CR>
 inoremap <F3> <ESC>:NERDTreeToggle<CR>
 
@@ -137,28 +137,28 @@ inoremap <F4> <ESC>:undotreeToggle<CR>
 "
 " NERDCommenter
 "
-let g:NERDSpaceDelims=1
-let g:NERDCompactSexyComs=1
-let g:NERDCommentEmptyLines=0
-let g:NERDTrimTrailingWhitespace=1
+let g:NERDSpaceDelims = 1
+let g:NERDCompactSexyComs = 1
+let g:NERDCommentEmptyLines = 0
+let g:NERDTrimTrailingWhitespace = 1
 
 "
 " command-t
 "
-let g:CommandTMaxFiles=500000
-let g:CommandTMaxDepth=20
-let g:CommandTMaxHeight=0
+let g:CommandTMaxFiles = 500000
+let g:CommandTMaxDepth = 20
+let g:CommandTMaxHeight = 0
 let g:CommandTFileScanner = 'watchman'
-let g:CommandTMatchWindowReverse=0
+let g:CommandTMatchWindowReverse = 0
 let g:CommandTMaxCachedDirectories = 10
-let g:CommandTInputDebounce=50
+let g:CommandTInputDebounce = 50
 let g:CommandTSmartCase = 1
 
 "
 " vim-airline
 "
-let g:airline_powerline_fonts=1
-let g:Powerline_symbols='unicode'
+let g:airline_powerline_fonts = 1
+let g:Powerline_symbols = 'unicode'
 set guifont=Sauce\ Code\ Powerline
 
 if !exists('g:airline_symbols')
@@ -183,14 +183,24 @@ let g:airline_symbols.whitespace = 'Ξ'
 "
 " latex
 "
-let g:tex_flavor='latex'
+let g:tex_flavor = 'latex'
+let g:Tex_DefaultTargetFormat = 'pdf'
+let g:Tex_FoldedSections=""
+let g:Tex_FoldedEnvironments=""
+let g:Tex_FoldedMisc=""
+if has("macunix")
+  let g:Tex_CompileRule_pdf = 'latexmk -pdf -synctex=1 --shell-escape --interaction=nonstopmode $*'
+  " let g:Tex_TreatMacViewerAsUNIX = 1
+  let g:Tex_ViewRule_pdf = 'open -a Skim'
+  map ,ls :w<CR>:silent !/Applications/Skim.app/Contents/SharedSupport/displayline -r <C-r>=line('.')<CR> %<.pdf %<CR><CR>
+endif
 
 
 "
 " python
 "
-let g:pymode_rope_goto_definition_bind="<C-]>"
-let g:pymode_doc_bind="<C-S-d>"
+let g:pymode_rope_goto_definition_bind = "<C-]>"
+let g:pymode_doc_bind = "<C-S-d>"
 
 "
 " Make <C-K> work exactly the same in INSERT mode as emacs

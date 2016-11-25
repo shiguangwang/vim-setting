@@ -34,7 +34,7 @@ echo "Done!"
 echo "Installing vim plugins ..."
 vim +PluginInstall +qall
 vim +PluginClean +qall
-vim +PluginUpdate +qall
+# vim +PluginUpdate +qall
 echo "Done!"
 
 # Prepare YouCompleteMe
