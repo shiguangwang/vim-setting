@@ -92,7 +92,7 @@ let g:solarized_termcolors = 256
 "
 " rainbow
 "
-let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
+let g:rainbow_active = 1 " 0 if you want to enable it later via :RainbowToggle
 
 
 "
