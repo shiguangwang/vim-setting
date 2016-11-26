@@ -13,6 +13,7 @@ Plugin 'edsono/vim-matchit'
 Plugin 'klen/python-mode'
 Plugin 'ludovicchabant/vim-lawrencium'
 Plugin 'luochen1990/rainbow'
+Plugin 'nanotech/jellybeans.vim'
 Plugin 'mbbill/undotree'
 Plugin 'mhinz/vim-signify'
 Plugin 'mileszs/ack.vim'
@@ -89,8 +90,10 @@ set ttymouse=xterm
 "
 " set background=dark
 " colorscheme solarized
-colorscheme lucario
-let g:solarized_termcolors = 256
+" colorscheme lucario
+colorscheme jellybeans
+let g:jellybeans_use_term_italics = 1
+" let g:solarized_termcolors = 256
 
 "
 " rainbow
