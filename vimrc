@@ -14,6 +14,7 @@ Plugin 'klen/python-mode'
 Plugin 'ludovicchabant/vim-lawrencium'
 Plugin 'luochen1990/rainbow'
 Plugin 'nanotech/jellybeans.vim'
+Plugin 'majutsushi/tagbar'
 Plugin 'mbbill/undotree'
 Plugin 'mhinz/vim-signify'
 Plugin 'mileszs/ack.vim'
@@ -208,6 +209,11 @@ endif
 "
 let g:pymode_rope_goto_definition_bind = "<C-]>"
 let g:pymode_doc_bind = "<C-S-d>"
+
+"
+" tagbar
+"
+nmap <F8> :TagbarToggle<CR>
 
 "
 " Make <C-K> work exactly the same in INSERT mode as emacs
