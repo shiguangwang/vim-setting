@@ -18,6 +18,7 @@ Plugin 'mhinz/vim-signify'
 Plugin 'mileszs/ack.vim'
 Plugin 'mtth/scratch.vim'
 Plugin 'nvie/vim-flake8'
+Plugin 'raphamorim/lucario'
 Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
@@ -86,8 +87,9 @@ set ttymouse=xterm
 "
 " color theme
 "
-set background=dark
-colorscheme solarized
+" set background=dark
+" colorscheme solarized
+colorscheme lucario
 let g:solarized_termcolors = 256
 
 "
