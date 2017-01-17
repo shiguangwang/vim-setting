@@ -128,11 +128,13 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_loc_list_height=3
+let g:syntastic_python_checkers = ['flake8']
 
 "
 " NERDTree
 "
 let NERDTreeIgnore = ['.pyc$', '\~$']
+let NERDTreeQuitOnOpen = 1
 nnoremap <F3> :NERDTreeToggle<CR>
 inoremap <F3> <ESC>:NERDTreeToggle<CR>
 
