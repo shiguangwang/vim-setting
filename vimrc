@@ -88,12 +88,12 @@ set ttymouse=xterm
 "
 " color theme
 "
-" set background=dark
-" colorscheme solarized
+set background=dark
+colorscheme solarized
 " colorscheme lucario
-colorscheme jellybeans
-let g:jellybeans_use_term_italics = 1
-" let g:solarized_termcolors = 256
+" colorscheme jellybeans
+" let g:jellybeans_use_term_italics = 1
+let g:solarized_termcolors = 256
 
 "
 " rainbow
