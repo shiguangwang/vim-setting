@@ -9,11 +9,11 @@ Plugin 'VundleVim/Vundle.vim'
 " ++++++++++ Your plugins go here ++++++++++
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'elzr/vim-json'
-Plugin 'edsono/vim-matchit'
 Plugin 'klen/python-mode'
 Plugin 'ludovicchabant/vim-lawrencium'
 Plugin 'luochen1990/rainbow'
 Plugin 'nanotech/jellybeans.vim'
+Plugin 'majutsushi/tagbar'
 Plugin 'mbbill/undotree'
 Plugin 'mhinz/vim-signify'
 Plugin 'mileszs/ack.vim'
@@ -24,6 +24,7 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
+Plugin 'tmhedberg/matchit'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
@@ -126,11 +127,14 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_loc_list_height=3
+let g:syntastic_python_checkers = ['flake8']
 
 "
 " NERDTree
 "
 let NERDTreeIgnore = ['.pyc$', '\~$']
+let NERDTreeQuitOnOpen = 1
 nnoremap <F3> :NERDTreeToggle<CR>
 inoremap <F3> <ESC>:NERDTreeToggle<CR>
 
@@ -208,6 +212,11 @@ endif
 "
 let g:pymode_rope_goto_definition_bind = "<C-]>"
 let g:pymode_doc_bind = "<C-S-d>"
+
+"
+" tagbar
+"
+nmap <F8> :TagbarToggle<CR>
 
 "
 " Make <C-K> work exactly the same in INSERT mode as emacs
